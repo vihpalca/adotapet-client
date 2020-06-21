@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { thunk, action, Action, Thunk, persist } from "easy-peasy";
+import { thunk, action, Action, Thunk } from "easy-peasy";
 import { get } from "lodash";
 
 export interface ExampleModel {
