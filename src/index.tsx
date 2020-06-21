@@ -1,14 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { StoreProvider } from "easy-peasy";
+import { ThemeProvider, theme as themeChakra } from "@chakra-ui/core";
+import { ThemeProvider as NewThemeProvider } from "styled-components";
+
+import { theme } from './theme';
+import store from "./configureStore";
 import './index.css';
 import Routes from "./routes/index";
 import history from "./utils/history";
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Routes history={history} />
-  </React.StrictMode>,
+  <NewThemeProvider theme={theme}>
+    <ThemeProvider theme={themeChakra}>
+      <StoreProvider store={store}>
+        <Routes history={history} />
+      </StoreProvider>
+    </ThemeProvider>
+  </NewThemeProvider>,
   document.getElementById('root')
 );
 

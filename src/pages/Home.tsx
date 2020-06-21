@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { theme } from '../theme';
+import { Button } from '@chakra-ui/core';
 
 const Home = () => {
   return (
-    <Container title={'teste'}>
-      teste
+    <Container>
+
     </Container>
   );  
 }
 
 const Container = styled.div `
   width: 100;
-  background-color: ${theme.color.primary};
   color: white;
 `
 

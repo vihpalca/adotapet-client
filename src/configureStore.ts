@@ -1,6 +1,6 @@
 import { composeWithDevTools } from "redux-devtools-extension";
 import { createStore, createTypedHooks } from "easy-peasy";
-import model, { StoreModel } from "./src/domains/index";
+import model, { StoreModel } from "./domains";
 
 const { useStoreActions, useStoreState, useStoreDispatch } = createTypedHooks<
   StoreModel
@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "development") {
   //@ts-ignore
   if (module.hot) {
     //@ts-ignore
-    module.hot.accept("./models", () => {
+    module.hot.accept("./domains", () => {
       store.reconfigure(model);
     });
   }
